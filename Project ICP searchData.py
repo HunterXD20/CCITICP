@@ -11,7 +11,7 @@ def searchData(fileName):
     inFile = open(fileName, "r")
     recNum_input = int(input("Please enter Record Number:"))
     recNum = inFile.readline()
-    for itemRec in range(1,51) :
+    for itemRec in inFile :
         if  itemRec == recNum_input :
             itemName = str(inFile.readline())
             itemNum = int(inFile.readline())
