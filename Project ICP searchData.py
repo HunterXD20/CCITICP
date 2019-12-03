@@ -1,4 +1,5 @@
 #searchData.py
+
 import os.path
 
 def main():
@@ -9,8 +10,9 @@ def main():
 def searchData(fileName):
     inFile = open(fileName, "r")
     recNum_input = int(input("Please enter Record Number:"))
-    for x in recNum:
-        if x == recNum_input:
+    recNum = inFile.readline()
+    for itemRec in range(1,51) :
+        if  itemRec == recNum_input :
             itemName = str(inFile.readline())
             itemNum = int(inFile.readline())
             category = inFile.readline()
@@ -30,10 +32,13 @@ def searchData(fileName):
             print("Delivery Status:", delStatus)
             print()
 
-    recNum = inFile.readline()
+           recNum = inFile.readline()
+           searchItem = input("\nDo you want to search another item record? (y/n):")
+           if searchItem == "n":
+               break
+               
     inFile.close()
 
-    searchData()
 
 main()
 
